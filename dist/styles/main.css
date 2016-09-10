@@ -1,0 +1,40 @@
+*, *::before, *::after {
+    -moz-box-sizing: boder-box;
+    -webkit-box-sizing: boder-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+
+    font-family: 'Open Sans';
+    min-height: 100%;
+    padding-bottom: 200px;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+.left {
+  text-align: center;
+  float: left;
+  background-color: #DEDEDE;
+  width: 30%;
+}
+
+.right {
+  float: right;
+  background-color: #FFFFFF;
+  width: 70%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
