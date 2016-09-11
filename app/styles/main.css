@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 html {
     height: 100%;
     font-size: 100%;
@@ -13,21 +14,25 @@ body {
 
     font-family: 'Open Sans';
     min-height: 100%;
-    padding-bottom: 200px;
+    height: 100%;
 }
 
 .wrapper {
+  position: relative;
   height: 100%;
   width: 100%;
 }
-.left {
+.left, .right {
+  height: 100%;
+}
+section.left {
   text-align: center;
   float: left;
   background-color: #DEDEDE;
   width: 30%;
 }
 
-.right {
+section.right {
   float: right;
   background-color: #FFFFFF;
   width: 70%;
