@@ -43,3 +43,7 @@ section.right {
   display: table;
   clear: both;
 }
+
+ul {
+  list-style: none;
+}
