@@ -1,5 +1,11 @@
-<ul>
- <li ng-repeat="x in home.roomObject.all">
-   <h3>{{x.$value}}</h3>
- </li>
-</ul>
+<section class="left">
+    <h1>Bloc Chat</h1>
+    <button type="button" class="btn btn-default" ng-click="home.open()">New room</button>
+    <ul>
+       <li ng-repeat="x in home.roomObject.all">
+         <h3>{{x.name}}</h3>
+       </li>
+      </ul>
+</section>
+<section class="right">
+</section>
