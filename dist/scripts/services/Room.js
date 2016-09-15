@@ -9,7 +9,13 @@
     roomService.addRoom = function (roomTitle) {
       rooms.$add({name: roomTitle});
     };
-    
+
+    roomService.currentRoom = null;
+
+    roomService.setSong = function(song) {
+      roomService.currentRoom = song;
+    };
+
     return roomService;
   }
 

@@ -3,9 +3,12 @@
     <button type="button" class="btn btn-default" ng-click="home.open()">New room</button>
     <ul>
        <li ng-repeat="x in home.roomObject.all">
-         <h3>{{x.name}}</h3>
+         <a ng-click="home.roomObject.setSong(x.name)"><h3>{{x.name}}</h3></a>
        </li>
       </ul>
 </section>
 <section class="right">
+  <div class="container">
+    <h1>{{ home.roomObject.currentRoom }}</h1>
+  </div>
 </section>

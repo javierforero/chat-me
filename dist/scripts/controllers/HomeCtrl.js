@@ -1,6 +1,6 @@
 (function(){
   function HomeCtrl(Room, $uibModal) {
-
+    
     this.roomObject = Room;
 
     this.open = function() {
