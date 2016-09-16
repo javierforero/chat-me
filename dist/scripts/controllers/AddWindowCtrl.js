@@ -7,12 +7,10 @@
       $uibModalInstance.dismiss('cancel');
     };
 
-    this.submit = function() {
+    this.foo = function() {
       if(this.text) {
-
-        this.roomService.addRoom(this.text);
+        $uibModalInstance.close({ roomName: this.text });
         this.text = '';
-        $uibModalInstance.close();
       }
 
     };
