@@ -32,8 +32,8 @@
 
     roomService.getMessages = function (roomId) {
 
-      if(roomService.currentRoom == null) {
-
+      if(roomService.currentRoom) {
+        console.log($firebaseArray(messagesRef.orderByChild('roomid').equalTo(roomId)));
         return $firebaseArray(messagesRef.orderByChild('roomid').equalTo(roomId));
       }
     };
