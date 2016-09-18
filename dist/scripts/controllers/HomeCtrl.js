@@ -1,7 +1,11 @@
 (function(){
   function HomeCtrl(Room, $uibModal) {
-    
+
     this.roomObject = Room;
+
+    this.getMessages = function(roomid) {
+
+    };
 
     this.open = function() {
       $uibModal.open({

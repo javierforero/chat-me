@@ -38,6 +38,11 @@ section.right {
   width: 70%;
 }
 
+section.right h1, section.left a h3  {
+  text-align: center;
+  text-transform: capitalize;
+}
+
 .clearfix:after {
   content: "";
   display: table;
@@ -47,4 +52,14 @@ section.right {
 ul {
   list-style: none;
   padding: 0;
+}
+
+.bold-capitalize {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.chat {
+  width: 100%;
+  padding: 15px;
 }

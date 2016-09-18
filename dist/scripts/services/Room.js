@@ -5,13 +5,13 @@
     var messagesRef = firebase.database().ref().child("messages");
     var rooms = $firebaseArray(roomsRef);
     var messages = $firebaseArray(messagesRef);
+
     var roomService = {};
 
 
     roomService.all = rooms;
     roomService.currentRoom = null;
     roomService.messages = null;
-
 
     roomService.addRoom = function (roomTitle) {
       rooms.$add({
@@ -30,19 +30,23 @@
       });
     };
 
-    roomService.getMessages = function (roomId) {
-
-      if(roomService.currentRoom) {
-        console.log($firebaseArray(messagesRef.orderByChild('roomid').equalTo(roomId)));
-        return $firebaseArray(messagesRef.orderByChild('roomid').equalTo(roomId));
-      }
-    };
-
     roomService.setRoom = function(room) {
       roomService.currentRoom = room;
+      roomService.getMessages(room.$id);
     };
 
+    roomService.getMessages = function(roomId) {
 
+     if(roomService.currentRoom) {
+
+       messagesRef.orderByChild('roomid').equalTo(roomId).on('value', function(snapshot) {
+
+         roomService.messages = snapshot.val();
+      });
+     }
+
+    };
+    
     return roomService;
   }
 

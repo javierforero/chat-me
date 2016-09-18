@@ -7,10 +7,11 @@
        </li>
       </ul>
 </section>
-<section class="right">
-  <div class="container">
-    <h1>{{ home.roomObject.currentRoom.name}}</h1>
-    <h2>{{home.roomObject.getMessages("-KRtP4xjyllHa-vm7vja")}}</h2><br>
-     <p></p>
+<section class="right container">
+  <h1>{{ home.roomObject.currentRoom.name}}</h1>
+  <div ng-repeat="message in home.roomObject.messages" class="chat">
+    <p class="bold-capitalize">{{message.username}}</p>
+    <p>{{message.content}}</p>
+    <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>
   </div>
 </section>
