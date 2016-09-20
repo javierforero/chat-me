@@ -1,20 +1,18 @@
-(function (){
-
-    function BlocChatCookies($cookies, $uiModal) {
-
-      var currentUser = $cookies.get('blocChatCurrentUser');
-
-      if(!currentUser || currentUser === '') {
-
-        $uiModal.open({
-          templateUrl: '/templates/usernameprompt.html',
-          controller: 'UsernamePromptCtrl as username'
-        });
-      }
-
+(function() {
+  function BlocChatCookies($cookies, $uibModal) {
+    
+    var currentUser = $cookies.get('blocChatCurrentUser');
+    if (!currentUser || currentUser === '') {
+      $uibModal.open({
+        templateUrl: '/templates/usernameprompt.html',
+        controller: 'UsernamePromptCtrl as user',
+        backdrop: 'static',
+        keyboard: false
+      });
     }
+  }
 
-    angular
-      .module('blocChat')
-      .run(['$cookies', '$uiModal', BlocChatCookies]);
+  angular
+    .module('blocChat')
+    .run(['$cookies', '$uibModal', BlocChatCookies]);
 })();
