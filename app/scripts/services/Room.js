@@ -10,8 +10,6 @@
 
 
     roomService.all = rooms;
-    roomService.currentRoom = null;
-    roomService.messages = null;
 
     roomService.addRoom = function (roomTitle) {
       rooms.$add({
@@ -30,23 +28,15 @@
       });
     };
 
-    roomService.setRoom = function(room) {
-      roomService.currentRoom = room;
-      roomService.getMessages(room.$id);
-    };
+    roomService.getMessages = function(room) {
 
-    roomService.getMessages = function(roomId) {
+       var query = messagesRef.orderByChild('roomid').equalTo(room.$id);
+       var queryArray = $firebaseArray(query);
 
-     if(roomService.currentRoom) {
-
-       messagesRef.orderByChild('roomid').equalTo(roomId).on('value', function(snapshot) {
-
-         roomService.messages = snapshot.val();
-      });
-     }
+       return queryArray;
 
     };
-    
+
     return roomService;
   }
 

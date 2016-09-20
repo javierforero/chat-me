@@ -3,13 +3,13 @@
     <button type="button" class="btn btn-default" ng-click="home.open()">New room</button>
     <ul>
        <li ng-repeat="x in home.roomObject.all">
-         <a ng-click="home.roomObject.setRoom(x)"><h3>{{x.name}}</h3></a>
+         <a ng-click="home.setRoom(x)"><h3>{{x.name}}</h3></a>
        </li>
       </ul>
 </section>
 <section class="right container">
-  <h1>{{ home.roomObject.currentRoom.name}}</h1>
-  <div ng-repeat="message in home.roomObject.messages" class="chat">
+  <h1>{{ home.currentRoom.name}}</h1>
+  <div ng-repeat="message in home.messages" class="chat">
     <p class="bold-capitalize">{{message.username}}</p>
     <p>{{message.content}}</p>
     <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>

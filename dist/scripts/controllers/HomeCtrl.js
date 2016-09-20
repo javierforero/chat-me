@@ -2,9 +2,13 @@
   function HomeCtrl(Room, $uibModal) {
 
     this.roomObject = Room;
+    this.currentRoom = null;
+    this.messages = null;
 
-    this.getMessages = function(roomid) {
+    this.setRoom = function(room){
 
+      this.currentRoom = room;
+      this.messages = this.roomObject.getMessages(room);
     };
 
     this.open = function() {
