@@ -2,7 +2,7 @@
     <h1>Bloc Chat</h1>
     <button type="button" class="btn btn-default" ng-click="home.open()">New room</button>
     <ul>
-       <li ng-repeat="x in home.roomObject.all">
+       <li ng-repeat="x in home.all">
          <a ng-click="home.setRoom(x)"><h3>{{x.name}}</h3></a>
        </li>
       </ul>

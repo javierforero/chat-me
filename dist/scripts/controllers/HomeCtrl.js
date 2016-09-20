@@ -1,14 +1,14 @@
 (function(){
   function HomeCtrl(Room, $uibModal) {
-
-    this.roomObject = Room;
+    
+    this.all = Room.all;
     this.currentRoom = null;
     this.messages = null;
 
     this.setRoom = function(room){
 
       this.currentRoom = room;
-      this.messages = this.roomObject.getMessages(room);
+      this.messages = Room.getMessages(room);
     };
 
     this.open = function() {
