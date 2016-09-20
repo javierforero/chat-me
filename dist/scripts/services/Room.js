@@ -18,22 +18,20 @@
       });
     };
 
-    roomService.addMessage = function(userName, content, roomId) {
+    roomService.addMessage = function(userName, content, room) {
 
       messages.$add({
         username: userName,
         content: content,
         sent_at: firebase.database.ServerValue.TIMESTAMP,
-        roomid: roomId
+        roomid: room.$id
       });
     };
 
     roomService.getMessages = function(room) {
 
-       var query = messagesRef.orderByChild('roomid').equalTo(room.$id);
-       var queryArray = $firebaseArray(query);
+      return $firebaseArray(messagesRef.orderByChild('roomid').equalTo(room.$id));
 
-       return queryArray;
 
     };
 
