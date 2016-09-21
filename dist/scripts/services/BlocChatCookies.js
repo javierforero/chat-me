@@ -1,8 +1,9 @@
 (function() {
-  function BlocChatCookies($cookies, $uibModal) {
-    
-    var currentUser = $cookies.get('blocChatCurrentUser');
-    if (!currentUser || currentUser === '') {
+  function BlocChatCookies($cookies, $cookieStore, $uibModal) {
+
+    this.currentUser = $cookies.get('blocChatCurrentUser');
+
+    if (!this.currentUser || this.currentUser === '') {
       $uibModal.open({
         templateUrl: '/templates/usernameprompt.html',
         controller: 'UsernamePromptCtrl as user',
@@ -10,9 +11,18 @@
         keyboard: false
       });
     }
+
+    this.getCurrentUser = function() {
+      return this.currentUser;
+    };
+
+    this.setCurrentUser = function(username) {
+      $cookieStore.put('blocChatCurrentUser', username);
+      this.currentUser = username;
+    }
   }
 
   angular
     .module('blocChat')
-    .run(['$cookies', '$uibModal', BlocChatCookies]);
+    .run(['$cookies','$cookieStore', '$uibModal', BlocChatCookies]);
 })();

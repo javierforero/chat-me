@@ -2,7 +2,6 @@
 
   function UsernamePromptCtrl($uibModalInstance, $cookieStore) {
 
-
     this.submit = function() {
       if(this.text) {
 
