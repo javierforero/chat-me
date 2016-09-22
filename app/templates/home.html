@@ -9,13 +9,13 @@
 </section>
 <section class="right">
   <h1>{{ home.currentRoom.name}}</h1>
-  <div ng-repeat="message in home.messages" class="chat">
+  <div ng-repeat="message in home.messages | orderBy: 'sent_at'" class="chat">
     <p class="bold-capitalize">{{message.username}}</p>
     <p>{{message.content}}</p>
     <small>{{message.sent_at | date:"MMM',' dd',' h:mma"}}</small>
   </div>
 
-    <form class="send-form" ng-submit="home.send()">
+    <form name="sendMessageForm" class="send-form" ng-submit="home.send()">
       <div class="form-group">
           <div class="input-field">
             <input type="text" ng-model="home.text" name="text" class="form-control" placeholder="Send message">

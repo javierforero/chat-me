@@ -1,8 +1,9 @@
 (function(){
-  function HomeCtrl(Room, Message, BlocChatCookies, $uibModal) {
+  function HomeCtrl(Room, Message,$cookies, $uibModal) {
 
     this.all = Room.all;
     this.currentRoom = null;
+    this.currentUser = $cookies.get('blocChatCurrentUser');
     this.messages = null;
 
     this.setRoom = function(room){
@@ -24,15 +25,15 @@
 
     this.send = function() {
 
-      if(this.text) {
-        console.log("worked!", this.text);
-        // Message.send(BlocChatCookies.currentUser, this.text, this.currentRoom);
+      if(this.text && this.currentRoom) {
+        Message.send(this.currentUser, this.text, this.currentRoom);
+        this.text = '';
       }
-    
+
     };
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room','Message','BlocChatCookies', '$uibModal', HomeCtrl]);
+    .controller('HomeCtrl', ['Room','Message','$cookies', '$uibModal', HomeCtrl]);
 })();
