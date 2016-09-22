@@ -11,7 +11,7 @@
         keyboard: false
       });
     }
-    
+
     this.setCurrentUser = function(username) {
       $cookieStore.put('blocChatCurrentUser', username);
       this.currentUser = username;

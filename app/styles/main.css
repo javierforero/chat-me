@@ -33,6 +33,7 @@ section.left {
 }
 
 section.right {
+  position: relative;
   float: right;
   background-color: #FFFFFF;
   width: 70%;
@@ -62,4 +63,18 @@ ul {
 .chat {
   width: 100%;
   padding: 15px;
+}
+
+.send-form {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+.input-field {
+  width:85%;
+  float: left;
 }
