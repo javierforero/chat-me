@@ -32,11 +32,16 @@ section.left {
   width: 30%;
 }
 
+section.left a {
+  color: black;
+}
+
 section.right {
   position: relative;
   float: right;
   background-color: #FFFFFF;
   width: 70%;
+  height: 100%;
 }
 
 section.right h1, section.left a h3  {
@@ -60,6 +65,15 @@ ul {
   text-transform: capitalize;
 }
 
+.chat-container h1 {
+  margin: 0;
+}
+
+.chat-container {
+  height: 93%;
+  overflow-y: scroll;
+}
+
 .chat {
   width: 100%;
   padding: 15px;
@@ -71,10 +85,47 @@ ul {
   bottom: 0;
   right: 0;
   left: 0;
+  max-height: 50px;
+  min-height: 35px;
   width: 100%;
+  height: 12%;
 }
 
 .input-field {
-  width:85%;
+  width:92%;
+  height: 100%;
   float: left;
+}
+
+.input-field input {
+  width: 100%;
+  height:100%;
+  outline: none;
+}
+
+.send-button {
+  float: right;
+  width: 8%;
+  height: 100%;
+}
+
+.send-button input {
+  width: 100%;
+  height: 100%;
+  background-color: #4A4A4A;
+  color: white;
+  border: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  padding: 20px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  padding: 20px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  padding: 20px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  padding: 20px;
 }

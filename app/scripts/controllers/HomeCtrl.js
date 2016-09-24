@@ -3,7 +3,6 @@
 
     this.all = Room.all;
     this.currentRoom = null;
-    this.currentUser = $cookies.get('blocChatCurrentUser');
     this.messages = null;
 
     this.setRoom = function(room){
@@ -24,14 +23,15 @@
     };
 
     this.send = function() {
-
+      var myUser = $cookies.getObject('blocChatCurrentUser');
+      console.log(myUser);
       if(this.text && this.currentRoom) {
-        Message.send(this.currentUser, this.text, this.currentRoom);
+        Message.send(myUser, this.text, this.currentRoom);
         this.text = '';
       }
 
     };
-  }
+ }
 
   angular
     .module('blocChat')
