@@ -8,7 +8,7 @@
       </ul>
 </section>
 <section class="right">
-  <div class="chat-container" auto-scroll="true">
+  <div class="chat-container" auto-scroll="home.messages">
     <h1>{{ home.currentRoom.name}}</h1>
     <div ng-repeat="message in home.messages | orderBy: 'sent_at'" class="chat">
       <p class="bold-capitalize">{{message.username}}</p>
