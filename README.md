@@ -1,6 +1,6 @@
-Bloc Chat
+ChatMe
 ---------
-Bloc chat is a chat application built with Angularjs and firebase.
+ChatMe is a chat application built with Angularjs and firebase.
 
 To get started simply clone repository and run "grunt" from the command line.
 
